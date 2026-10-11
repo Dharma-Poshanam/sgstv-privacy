@@ -1,0 +1,193 @@
+/*
+ * privacy.html only; the player page never loads this file.
+ * Brand palette (clients/shared/brand/README.md): dawn ground and oxblood ink in
+ * light, the oxblood-biased void with dawn ink and apricot links in dark.
+ * System fonts: the CSP has no font-src, so web fonts would be blocked.
+ */
+:root {
+  --bg: #f2ede4;
+  --surface: #fbf8f2;
+  --ink: #241316;
+  --ink-muted: #5b4a4d;
+  --rule: #ddd2c3;
+  --accent: #8e1218;
+  --link: #8e1218;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #140609;
+    --surface: #1f0b0e;
+    --ink: #f2ede4;
+    --ink-muted: #c9bdb5;
+    --rule: #3d1d21;
+    --accent: #d8a94f;
+    --link: #e8a15c;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #140609;
+  --surface: #1f0b0e;
+  --ink: #f2ede4;
+  --ink-muted: #c9bdb5;
+  --rule: #3d1d21;
+  --accent: #d8a94f;
+  --link: #e8a15c;
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+.masthead,
+.policy,
+.colophon {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.masthead {
+  padding-top: 2.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.brand {
+  margin: 0;
+  color: var(--accent);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.75rem;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+}
+
+.institution {
+  margin: 0.25rem 0 0;
+  color: var(--ink-muted);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+h1 {
+  margin: 2rem 0 0.25rem;
+  font-size: 2.25rem;
+}
+
+h2 {
+  margin: 2.5rem 0 0.75rem;
+  font-size: 1.5rem;
+  color: var(--accent);
+}
+
+h3 {
+  margin: 1.75rem 0 0.5rem;
+  font-size: 1.1875rem;
+}
+
+.updated {
+  margin: 0 0 1.5rem;
+  color: var(--ink-muted);
+  font-size: 0.9375rem;
+}
+
+.lede {
+  margin: 0 0 1rem;
+  padding: 1rem 1.25rem;
+  background: var(--surface);
+  border-left: 4px solid var(--accent);
+  border-radius: 4px;
+}
+
+p,
+ul,
+dl {
+  margin: 0 0 1rem;
+}
+
+ul {
+  padding-left: 1.25rem;
+}
+
+li {
+  margin-bottom: 0.4rem;
+}
+
+dt {
+  font-weight: 700;
+}
+
+dd {
+  margin: 0.25rem 0 1rem;
+}
+
+a {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  overflow-wrap: anywhere;
+}
+
+a:focus-visible {
+  outline: 3px solid var(--link);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+code {
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 0.9em;
+  white-space: nowrap;
+  padding: 0.05em 0.3em;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.colophon {
+  margin-top: 3rem;
+  padding-top: 1.25rem;
+  padding-bottom: 2.5rem;
+  border-top: 1px solid var(--rule);
+  color: var(--ink-muted);
+  font-size: 0.9375rem;
+}
+
+.colophon p {
+  margin: 0;
+}
